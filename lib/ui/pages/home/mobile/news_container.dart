@@ -12,7 +12,6 @@ class NewsContainer extends StatelessWidget {
     return GlassWidget(
       start: 0.2,
       end: 0.2,
-      width: responsive.wp(80),
       height: responsive.hp(30),
       radius: 10,
       glassColor: themeData.colorScheme.background,

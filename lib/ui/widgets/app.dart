@@ -41,6 +41,7 @@ class AppWidget extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              clipBehavior: Clip.antiAlias,
               width: width,
               height: height,
               margin: margin,
