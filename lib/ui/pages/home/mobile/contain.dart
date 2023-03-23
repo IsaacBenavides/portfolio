@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'mobile_body_contain.dart';
+import 'body_contain.dart';
 import 'static_icons_container.dart';
 
 class MobileContain extends StatelessWidget {

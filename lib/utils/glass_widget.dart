@@ -11,6 +11,7 @@ class GlassWidget extends StatelessWidget {
   final double? maxWidth;
   final double? width;
   final double? height;
+  final EdgeInsets? padding;
 
   const GlassWidget({
     Key? key,
@@ -23,6 +24,7 @@ class GlassWidget extends StatelessWidget {
     this.maxWidth,
     this.width,
     this.height,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -33,6 +35,7 @@ class GlassWidget extends StatelessWidget {
         child: Container(
           height: height,
           width: width,
+          padding: padding,
           constraints: BoxConstraints(maxWidth: maxWidth ?? 750),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(radius ?? 0.0),

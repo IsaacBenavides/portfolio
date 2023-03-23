@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ios_portfolio/ui/widgets/main.dart';
 import 'news_container.dart';
 
 class MobileBodyContain extends StatelessWidget {
@@ -10,6 +11,7 @@ class MobileBodyContain extends StatelessWidget {
       child: Column(
         children: const [
           NewsContainer(),
+          CustomText(text: "Aqui van a ir los iconos")
         ],
       ),
     );

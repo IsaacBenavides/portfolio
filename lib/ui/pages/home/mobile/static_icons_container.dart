@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ios_portfolio/ui/widgets/app.dart';
 import 'package:ios_portfolio/utils/main.dart';
 
 class StaticIconsContainer extends StatelessWidget {
@@ -22,14 +23,35 @@ class StaticIconsContainer extends StatelessWidget {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: List.generate(
-              3,
-              (index) => Container(
-                width: height * .8,
-                height: height * .8,
-                color: Colors.primaries[index],
+            children: [
+              AppWidget(
+                width: height * .7,
+                height: height * .7,
+                margin: EdgeInsets.symmetric(horizontal: width * .02),
+                child: Image.asset(
+                  "assets/images/phone.png",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
+              AppWidget(
+                width: height * .7,
+                height: height * .7,
+                margin: EdgeInsets.symmetric(horizontal: width * .02),
+                child: Image.asset(
+                  "assets/images/mail.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              AppWidget(
+                width: height * .7,
+                height: height * .7,
+                margin: EdgeInsets.symmetric(horizontal: width * .02),
+                child: Image.asset(
+                  "assets/images/contacts.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
           );
         },
       ),
