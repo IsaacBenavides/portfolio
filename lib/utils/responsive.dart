@@ -35,7 +35,7 @@ class Responsive {
     return value;
   }
 
-  bool get isMobile => _width! < 850;
-  bool get isTablet => _width! < 1100 && _width! >= 850;
+  bool get isMobile => _width! < 600;
+  bool get isTablet => _width! < 1100 && _width! >= 600;
   bool get isDesktop => _width! >= 1100;
 }

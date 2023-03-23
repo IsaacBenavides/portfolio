@@ -8,15 +8,21 @@ class GlassWidget extends StatelessWidget {
   final Color? glassColor;
   final Color? borderColor;
   final double? radius;
+  final double? maxWidth;
+  final double? width;
+  final double? height;
 
   const GlassWidget({
     Key? key,
     required this.child,
-    required this.start,
-    required this.end,
+    this.start = 0.1,
+    this.end = 0.1,
     this.glassColor,
     this.borderColor,
     this.radius,
+    this.maxWidth,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -25,6 +31,9 @@ class GlassWidget extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
         child: Container(
+          height: height,
+          width: width,
+          constraints: BoxConstraints(maxWidth: maxWidth ?? 750),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(radius ?? 0.0),
             gradient: LinearGradient(
