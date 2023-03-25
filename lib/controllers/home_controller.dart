@@ -31,8 +31,10 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
   }
 
-  downloadCV() {
-    AnchorElement anchorElement = AnchorElement(href: "/assets/files/cv.pdf");
+  downloadCV() async {
+    AnchorElement anchorElement =
+        AnchorElement(href: "assets/assets/files/cv.pdf");
+    anchorElement.type = "pdf";
     anchorElement.download = "Isaac Benavides CV";
     anchorElement.click();
   }

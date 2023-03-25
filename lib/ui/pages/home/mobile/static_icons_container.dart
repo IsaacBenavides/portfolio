@@ -14,7 +14,7 @@ class StaticIconsContainer extends StatelessWidget {
       end: 0.2,
       radius: 20,
       width: responsive.wp(85),
-      height: responsive.hp(11),
+      height: responsive.hp(12),
       glassColor: themeData.colorScheme.background,
       child: LayoutBuilder(
         builder: (_, constraints) {
@@ -31,6 +31,7 @@ class StaticIconsContainer extends StatelessWidget {
                   "assets/images/phone.png",
                   fit: BoxFit.cover,
                 ),
+                onTap: () => Utils.launchInBrowser("tel://+573045647252"),
               ),
               AppWidget(
                 height: height * .7,
@@ -39,6 +40,7 @@ class StaticIconsContainer extends StatelessWidget {
                   "assets/images/mail.png",
                   fit: BoxFit.cover,
                 ),
+                onTap: () => Utils.launchInBrowser("mailto:isaacxzx@gmail.com"),
               ),
               AppWidget(
                 height: height * .7,

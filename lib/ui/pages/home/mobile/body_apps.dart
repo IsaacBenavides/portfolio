@@ -23,8 +23,8 @@ class BodyApps extends StatelessWidget {
         spacing: 3,
         children: [
           AppWidget(
-            width: height * .72,
-            height: height * .72,
+            width: height * .75,
+            height: height * .75,
             appName: "Github",
             child: Image.asset(
               "assets/images/github.png",
@@ -33,8 +33,8 @@ class BodyApps extends StatelessWidget {
             onTap: () => Utils.launchInBrowser(IsaacUrls.github),
           ),
           AppWidget(
-            width: height * .72,
-            height: height * .72,
+            width: height * .75,
+            height: height * .75,
             appName: "LinkedIn",
             child: Image.asset(
               "assets/images/linkedin.png",
@@ -43,8 +43,8 @@ class BodyApps extends StatelessWidget {
             onTap: () => Utils.launchInBrowser(IsaacUrls.linkedin),
           ),
           AppWidget(
-            width: height * .72,
-            height: height * .72,
+            width: height * .75,
+            height: height * .75,
             appName: "Resume",
             child: Image.asset(
               "assets/images/pdf.png",
@@ -53,8 +53,8 @@ class BodyApps extends StatelessWidget {
             onTap: () => homeController.downloadCV(),
           ),
           AppWidget(
-            width: height * .72,
-            height: height * .72,
+            width: height * .75,
+            height: height * .75,
             appName: "Calendario",
             colors: const [Colors.white],
             child: LayoutBuilder(
