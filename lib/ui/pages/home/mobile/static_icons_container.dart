@@ -12,7 +12,7 @@ class StaticIconsContainer extends StatelessWidget {
     return GlassWidget(
       start: 0.2,
       end: 0.2,
-      radius: 10,
+      radius: 20,
       width: responsive.wp(85),
       height: responsive.hp(11),
       glassColor: themeData.colorScheme.background,
@@ -25,7 +25,6 @@ class StaticIconsContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AppWidget(
-                width: height * .7,
                 height: height * .7,
                 margin: EdgeInsets.symmetric(horizontal: width * .02),
                 child: Image.asset(
@@ -34,7 +33,6 @@ class StaticIconsContainer extends StatelessWidget {
                 ),
               ),
               AppWidget(
-                width: height * .7,
                 height: height * .7,
                 margin: EdgeInsets.symmetric(horizontal: width * .02),
                 child: Image.asset(
@@ -43,7 +41,6 @@ class StaticIconsContainer extends StatelessWidget {
                 ),
               ),
               AppWidget(
-                width: height * .7,
                 height: height * .7,
                 margin: EdgeInsets.symmetric(horizontal: width * .02),
                 child: Image.asset(

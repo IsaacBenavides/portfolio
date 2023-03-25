@@ -13,7 +13,7 @@ class NewsContainer extends StatelessWidget {
       start: 0.2,
       end: 0.2,
       height: responsive.hp(30),
-      radius: 10,
+      radius: 20,
       glassColor: themeData.colorScheme.background,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: const Center(

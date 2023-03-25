@@ -42,7 +42,8 @@ class _StatusBarState extends State<_StatusBar> {
     homeController = context.read();
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      homeController.getCurrentDateTime();
+      homeController.getCurrentTime();
+      homeController.getCurrentDate();
     });
     super.initState();
   }

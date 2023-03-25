@@ -20,29 +20,9 @@ class MobileStatusBar extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: CustomText(
-                    text: homeController.currentTime,
-                    fontSize: timeSize,
-                    foreground: Paint()
-                      ..style = PaintingStyle.stroke
-                      ..strokeWidth = 2
-                      ..color = Colors.black,
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: CustomText(
-                    text: homeController.currentTime,
-                    fontSize: timeSize,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+            child: CustomTextWithBorder(
+              text: homeController.currentTime,
+              fontSize: timeSize,
             ),
           ),
           Image.asset(

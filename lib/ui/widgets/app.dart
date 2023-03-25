@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_text_with_border.dart';
 import 'package:ios_portfolio/utils/main.dart';
 
 class AppWidget extends StatelessWidget {
@@ -34,30 +35,55 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
+
+    List<Color> currentColors =
+        colors.length == 1 ? [...colors, ...colors] : colors;
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        height: height ?? 0 + (appName != null ? responsive.hp(2) : 0.0),
-        child: Column(
-          children: [
-            Container(
-              clipBehavior: Clip.antiAlias,
-              width: width,
-              height: height,
-              margin: margin,
-              padding: padding,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(radius ?? 10),
-                gradient: LinearGradient(
-                  colors:
-                      List.generate(colors.length, (index) => colors[index]),
-                  begin: AlignmentDirectional.topStart,
-                  end: AlignmentDirectional.bottomEnd,
+        height: height! + (appName != null ? responsive.hp(5) : 0.0),
+        width: width,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final maxHeight = constraints.maxHeight;
+            final maxWidth = constraints.maxWidth;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: width,
+                  height: height,
+                  margin: margin,
+                  padding: padding,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(radius ?? 10),
+                    gradient: LinearGradient(
+                      colors: List.generate(
+                        currentColors.length,
+                        (index) => currentColors[index],
+                      ),
+                      begin: AlignmentDirectional.topStart,
+                      end: AlignmentDirectional.bottomEnd,
+                    ),
+                  ),
+                  child: child,
                 ),
-              ),
-              child: child,
-            ),
-          ],
+                if (appName != null) ...[
+                  const SizedBox(height: 3),
+                  SizedBox(
+                    height: responsive.hp(5) - 3,
+                    width: maxWidth,
+                    child: CustomTextWithBorder(
+                      alignment: Alignment.center,
+                      text: appName!,
+                      fontSize: maxHeight * .12,
+                    ),
+                  )
+                ]
+              ],
+            );
+          },
         ),
       ),
     );
