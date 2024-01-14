@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/Volumes/external/isaac/portfolio",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
