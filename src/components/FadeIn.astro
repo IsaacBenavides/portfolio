@@ -1,0 +1,25 @@
+---
+interface Props {
+  delay: string;
+  className?: string;
+}
+const { delay, className } = Astro.props;
+---
+
+<div class={`fade-in ${className}`}>
+  <slot />
+</div>
+
+<style define:vars={{ delay }}>
+  .fade-in {
+    animation: fadeIn 600ms var(--delay) both;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

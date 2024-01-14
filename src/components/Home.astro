@@ -1,0 +1,109 @@
+---
+import ContentContainer from "./ContentContainer.astro";
+import Github from "../icons/Github.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+
+import bg from "public/images/bg.webp";
+import isaac from "public/images/Isaac.webp";
+import FadeIn from "./FadeIn.astro";
+---
+
+<ContentContainer
+  className="bg-cover flex flex-col h-screen relative"
+  backgroundUrl={`url(${bg.src})`}
+  id="home"
+>
+  <article
+    class="relative mx-auto max-w-[120rem] flex flex-col justify-center items-center h-full flex-1"
+  >
+    <section class="flex flex-col gap-12 items-center mt-20">
+      <article class="px-5 flex flex-row gap-5">
+        <div class="flex flex-col gap-5">
+          <FadeIn delay="100ms" className="max-w-[30ch]">
+            <span class="text-5xl font-bold">Hey, I'm Isaac Benavides</span>
+          </FadeIn>
+          <FadeIn delay="900ms">
+            <p class="max-w-[40ch] text-xl">
+              <span class="text-yellow-100">
+                FullStack developer specialized in Flutter.
+              </span>
+              <span class="text-red-300">
+                Focused on developing apps, websites, and web applications
+              </span>
+              <span class="text-green-200"
+                >that lead to the overall success of the product.</span
+              >
+            </p>
+          </FadeIn>
+        </div>
+        <FadeIn delay="1600ms">
+          <div class="h-40 w-40 rounded-full overflow-hidden">
+            <picture> <img src={`${isaac.src}`} alt="" /></picture>
+          </div>
+        </FadeIn>
+      </article>
+      <FadeIn delay="2000ms" className="max-w-60 w-full h-12 ">
+        <a
+          href="#projects"
+          type="button"
+          class="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 flex justify-center items-center shadow-sm"
+        >
+          Go to Projects
+        </a>
+      </FadeIn>
+    </section>
+  </article>
+  <div class="py-5 w-full flex justify-center items-center">
+    <div class="mouse"></div>
+  </div>
+
+  <section
+    class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20 h-auto bg-black px-2 py-5 rounded-e-xl gap-5"
+  >
+    <a href="https://www.github.com/IsaacBenavides" target="_blank">
+      <Github />
+    </a>
+    <div class="h-5"></div>
+    <a
+      href="https://www.linkedin.com/in/isaac-daniel-benavides-torres-4b6b5a203/"
+      target="_blank"
+    >
+      <LinkedIn />
+    </a>
+  </section>
+</ContentContainer>
+
+<style>
+  .mouse {
+    position: relative;
+    height: 3rem;
+    width: 1.8rem;
+    border: 3px solid white;
+    border-radius: 9999px;
+  }
+
+  .mouse::before {
+    content: "";
+    height: 0.5rem;
+    width: 0.5rem;
+    position: absolute;
+    opacity: 1;
+    border-radius: 9999px;
+    background-color: white;
+    top: 0.25rem;
+    transform: translateX(-50%);
+    left: 50%;
+    animation: mouse 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes mouse {
+    from {
+      opacity: 1;
+      top: 0.25rem;
+    }
+    to {
+      opacity: 0;
+      top: 2.5rem;
+    }
+  }
+</style>
