@@ -10,7 +10,7 @@ import FadeIn from "./FadeIn.astro";
 
 <ContentContainer
   className="bg-cover flex flex-col h-screen relative"
-  backgroundUrl={`url(${bg.src})`}
+  backgroundUrl="url(images/bg.webp)"
   id="home"
 >
   <article
@@ -38,7 +38,7 @@ import FadeIn from "./FadeIn.astro";
         </div>
         <FadeIn delay="1600ms">
           <div class="h-40 w-40 rounded-full overflow-hidden">
-            <picture> <img src={`${isaac.src}`} alt="" /></picture>
+            <picture> <img src="images/Isaac.webp" alt="" /></picture>
           </div>
         </FadeIn>
       </article>
