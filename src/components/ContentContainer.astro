@@ -3,10 +3,12 @@ const { className, backgroundUrl, id } = Astro.props;
 ---
 
 <section id={id} class={`${className} w-full`}>
+  {
+    backgroundUrl && (
+      <div class="w-full absolute h-full">
+        <img src={backgroundUrl} alt="" />
+      </div>
+    )
+  }
   <slot />
 </section>
-<style define:vars={{ backgroundUrl }}>
-  section {
-    background-image: var(--backgroundUrl);
-  }
-</style>
