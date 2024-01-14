@@ -2,15 +2,12 @@
 import ContentContainer from "./ContentContainer.astro";
 import Github from "../icons/Github.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
-
-import bg from "public/images/bg.webp";
-import isaac from "public/images/Isaac.webp";
 import FadeIn from "./FadeIn.astro";
 ---
 
 <ContentContainer
   className="bg-cover flex flex-col h-screen relative"
-  backgroundUrl="url(public/images/bg.webp)"
+  backgroundUrl="url('images/bg.webp')"
   id="home"
 >
   <article
@@ -38,7 +35,7 @@ import FadeIn from "./FadeIn.astro";
         </div>
         <FadeIn delay="1600ms">
           <div class="h-40 w-40 rounded-full overflow-hidden">
-            <picture> <img src="images/Isaac.webp" alt="" /></picture>
+            <picture><img src="images/Isaac.webp" alt="" /></picture>
           </div>
         </FadeIn>
       </article>
