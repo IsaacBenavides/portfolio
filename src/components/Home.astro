@@ -6,23 +6,25 @@ import FadeIn from "./FadeIn.astro";
 ---
 
 <ContentContainer
-  className="bg-cover flex flex-col h-screen relative"
+  className="flex flex-col min-h-screen relative overflow-hidden"
   backgroundUrl="images/bg.webp"
   id="home"
 >
   <article
-    class="relative mx-auto max-w-[120rem] flex flex-col justify-center items-center h-full flex-1"
+    class="relative mx-auto max-w-[120rem] flex flex-col justify-center items-center flex-1"
   >
     <section class="flex flex-col gap-12 items-center mt-20">
       <article class="px-5 flex flex-row gap-5">
         <div class="flex flex-col gap-5">
-          <FadeIn delay="100ms" className="max-w-[30ch]">
-            <span class="text-5xl font-bold">Hey, I'm Isaac Benavides</span>
+          <FadeIn delay="300ms" className="max-w-[30ch]">
+            <span class="text-5xl font-bold text-balance"
+              >Hey, I'm Isaac Benavides</span
+            >
           </FadeIn>
           <FadeIn delay="900ms">
-            <p class="max-w-[40ch] text-xl">
+            <p class="max-w-[40ch] text-xl text-pretty">
               <span class="text-yellow-100">
-                FullStack developer specialized in Flutter.
+                FullStack Developer specialized in FrontEnd.
               </span>
               <span class="text-red-300">
                 Focused on developing apps, websites, and web applications
@@ -39,11 +41,11 @@ import FadeIn from "./FadeIn.astro";
           </div>
         </FadeIn>
       </article>
-      <FadeIn delay="2000ms" className="max-w-60 w-full h-12 ">
+      <FadeIn delay="2200ms" className="max-w-60 w-full h-12 ">
         <a
           href="#projects"
           type="button"
-          class="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 flex justify-center items-center shadow-sm"
+          class="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 flex justify-center items-center shadow-sm transition hover:-translate-y-[2px]"
         >
           Go to Projects
         </a>
@@ -54,20 +56,22 @@ import FadeIn from "./FadeIn.astro";
     <div class="mouse"></div>
   </div>
 
-  <section
-    class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20 h-auto bg-black px-2 py-5 rounded-e-xl gap-5"
-  >
-    <a href="https://www.github.com/IsaacBenavides" target="_blank">
-      <Github />
-    </a>
-    <div class="h-5"></div>
-    <a
-      href="https://www.linkedin.com/in/isaac-daniel-benavides-torres-4b6b5a203/"
-      target="_blank"
+  <FadeIn delay="2500ms">
+    <section
+      class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20 h-auto bg-black px-2 py-5 rounded-e-xl gap-5"
     >
-      <LinkedIn />
-    </a>
-  </section>
+      <a href="https://www.github.com/IsaacBenavides" target="_blank">
+        <Github />
+      </a>
+      <div class="h-5"></div>
+      <a
+        href="https://www.linkedin.com/in/isaac-daniel-benavides-torres-4b6b5a203/"
+        target="_blank"
+      >
+        <LinkedIn />
+      </a>
+    </section>
+  </FadeIn>
 </ContentContainer>
 
 <style>
@@ -90,17 +94,21 @@ import FadeIn from "./FadeIn.astro";
     top: 0.25rem;
     transform: translateX(-50%);
     left: 50%;
-    animation: mouse 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: mouse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   @keyframes mouse {
-    from {
+    0% {
       opacity: 1;
       top: 0.25rem;
     }
-    to {
+    50% {
       opacity: 0;
-      top: 2.5rem;
+      top: 2rem;
+    }
+    100% {
+      opacity: 1;
+      top: 0.25rem;
     }
   }
 </style>

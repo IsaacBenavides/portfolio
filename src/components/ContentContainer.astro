@@ -2,11 +2,11 @@
 const { className, backgroundUrl, id } = Astro.props;
 ---
 
-<section id={id} class={`${className} w-full`}>
+<section id={id} class={`${className} w-full min-h-screen`}>
   {
     backgroundUrl && (
       <div class="w-full absolute h-full">
-        <img src={backgroundUrl} alt="" />
+        <img src={backgroundUrl} alt="" class="w-full h-full object-cover" />
       </div>
     )
   }
