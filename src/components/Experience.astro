@@ -1,11 +1,65 @@
 ---
 import ContentContainer from "./ContentContainer.astro";
+import ExperienceContainer from "./ExperienceContainer.astro";
 ---
 
-<ContentContainer className="h-screen bg-slate-800" id="experience">
+<ContentContainer
+  className="h-auto min-h-screen bg-slate-800 overflow-hidden"
+  id="experience"
+>
   <article
-    class="relative mx-auto max-w-[120rem] flex flex-col justify-center items-center h-full flex-1"
+    class="experience-wrapper relative mx-auto max-w-[120rem] flex flex-col items-center flex-1 h-full gap-10 py-10"
   >
-    asdasd
+    <section class="to-animate flex flex-col items-center justify-center">
+      <span class="text-5xl relative mt-10 block font-semibold mb-4"
+        >Experience</span
+      >
+      <span class="text-sm text-slate-400">Companies I have worked for</span>
+    </section>
+
+    <section
+      class="w-full px-10 grid grid-cols-12 auto-rows-[260px] md:auto-rows-[500px] gap-3 justify-center relative"
+    >
+      <ExperienceContainer
+        delay="0s"
+        className="col-span-12 md:col-span-7 lg:col-span-3"
+        image="public/images/queryblocks.svg"
+        title="QueryBlocks"
+        subtitle="Full Stack Developer"
+        dates="Nov. 2023 - Currently"
+        href="https://queryblocks.eu/"
+        buttonText="Visit QueryBlocks"
+      />
+      <ExperienceContainer
+        delay=".5s"
+        className="col-span-12 md:col-span-5 lg:col-span-3"
+        image="public/images/lsv.webp"
+        title="LSV-TECH"
+        subtitle="Full Stack Developer"
+        dates="Feb. 2022 - Nov. 2023"
+        href="https://lsv-tech.com/"
+        buttonText="Visit LSV-TECH"
+      />
+      <ExperienceContainer
+        delay="1s"
+        className="col-span-12 md:col-span-5 lg:col-span-3"
+        image="public/images/atua.webp"
+        title="ATUA"
+        subtitle="Front-end Mobile Developer"
+        dates="Jul. 2021 - Aug. 2022"
+        href="https://www.atuarental.com/"
+        buttonText="Visit ATUA"
+      />
+
+      <ExperienceContainer
+        delay="1.5s"
+        className="col-span-12 md:col-span-7 lg:col-span-3"
+        image="public/images/freelancer.webp"
+        title="FreeLance"
+        subtitle="Front-end Mobile Developer"
+        dates="Dec. 2020 - Jul. 2021"
+        useButton={false}
+      />
+    </section>
   </article>
 </ContentContainer>
