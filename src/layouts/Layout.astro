@@ -130,7 +130,6 @@ const { title } = Astro.props;
         entry.target.classList.add("reveal");
         return;
       }
-      console.log(entry.isIntersecting);
     });
   });
   document.querySelectorAll(".to-animate")!.forEach((e) => observer.observe(e));
